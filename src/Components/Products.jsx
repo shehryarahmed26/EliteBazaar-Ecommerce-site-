@@ -34,12 +34,12 @@ const Products = () => {
      {loading ? 
      <h1>Loading...</h1> :
      <div>
-      <div className="flex justify-center flex-wrap mb-8">
-      <button onClick={() => setcategoryitem('All')} className={`${categoryitem === 'All' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-black'} px-3 rounded mx-1 my-1 text-center sm:text-xs px-1`}>All</button>
+      <div className="flex justify-center flex-wrap mb-8 mx-5">
+      <button onClick={() => setcategoryitem('All')} className={`${categoryitem === 'All' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-black'} px-3 rounded mx-1 my-1 text-center text-[8px] md:text-lg`}>All</button>
 
       {
         categories.map((category) => (
-          <button onClick={() => setcategoryitem(category.slug)} className={`${categoryitem === category.slug ? 'bg-blue-600 text-white' : 'bg-gray-200 text-black'} px-3 rounded mx-1 my-1 text-center sm:text-xs px-1`}>{category.name}</button>
+          <button onClick={() => setcategoryitem(category.slug)} className={`${categoryitem === category.slug ? 'bg-blue-600 text-white' : 'bg-gray-200 text-black'} px-3 rounded mx-1 my-1 text-center text-[8px] md:text-lg `}>{category.name}</button>
            ))
       }
      </div>
