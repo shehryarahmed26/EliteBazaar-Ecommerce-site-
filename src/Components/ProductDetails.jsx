@@ -8,10 +8,7 @@ const ProductDetails = () => {
         fetch(`https://dummyjson.com/products/${id}`)
 .then(res => res.json())
 .then((res) => {
-    setdata(res)
-    console.log(res);
-    
-    console.log("Data>>", data);
+    setdata(res)    
     
 }, []);
     })

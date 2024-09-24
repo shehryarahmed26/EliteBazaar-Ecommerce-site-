@@ -1,23 +1,28 @@
 import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
+import { Pagination } from 'antd';
+
 const Products = () => {
   const [products, setproducts] = useState([]);
   const [categories, setcategories] = useState([]);
   const [loading, setloading] = useState(true)
   const [categoryitem, setcategoryitem] = useState('All')
+  const [skip, setskip] = useState(0)
+  const [limit, setlimit] = useState(20)
   
   useEffect(() => {
     setloading(true)
     const url = categoryitem === 'All' ? 
-    'https://dummyjson.com/products' :
+    `https://dummyjson.com/products?limit=${limit}&skip=${skip}&select=title,price,thumbnail` :
     `https://dummyjson.com/products/category/${categoryitem}` 
     fetch(url)
       .then((res) => res.json())
       .then((res) => {
         setproducts(res.products);
+        
       });
       setloading(false)
-    }, [categoryitem]);
+    }, [categoryitem, skip]);
     
     useEffect(() => {
       setloading(true)
@@ -25,7 +30,6 @@ const Products = () => {
       .then((res) => res.json())
       .then((res) => {
         setcategories(res);
-        console.log(categories);
         setloading(false)
       });
   }, []);
@@ -44,11 +48,16 @@ const Products = () => {
       }
      </div>
      
-     <div className="flex w-full flex-wrap justify-center">
+     <div className="flex w-full flex-wrap justify-center gap-5 px-8">
      { products.map((item) => (
       <ProductCard key={item.id} item={item}/>
      ))}
-     </div>
+     </div> {
+      categoryitem === 'All' ? 
+       <Pagination onChange={(num) => setskip((num - 1) * 20)
+       } className="my-8" align  ="center" defaultCurrent={1} total={194} />
+       : ''
+     }
      </div>
      }
     </div>

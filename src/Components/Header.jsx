@@ -7,24 +7,15 @@ const Header = () => {
     {/* Main navigation container */}
     <nav className="flex-no-wrap relative flex w-full items-center justify-betwee py-2 shadow-dark-mild dark:bg-neutral-700 lg:flex-wrap lg:justify-start lg:py-4">
       <div className="flex w-full flex-wrap items-center justify-between px-3">
-        {/* Hamburger button for mobile view */}
-        <button
-          className="block border-0 bg-transparent px-2 text-black/50 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 dark:text-neutral-200 lg:hidden"
-          type="button"
-          data-twe-collapse-init=""
-          data-twe-target="#navbarSupportedContent1"
-          aria-controls="navbarSupportedContent1"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+        
           {/* Hamburger icon */}
-          {<Link to={'/'}><img
+          <Link to={'/'}><img
               src="/Images/logo.PNG"
               className='w-16 md:w-24'
               alt="TE Logo"
               loading="lazy"
-            /> </Link>}
-        </button>
+            /> </Link>
+        {/* </button> */}
         {/* Collapsible navigation container */}
         <div
           className="!visible hidden flex-grow basis-[100%] items-center lg:!flex lg:basis-auto"
@@ -36,12 +27,7 @@ const Header = () => {
             className="mb-4 me-5 ms-2 mt-3 flex items-center text-neutral-900 hover:text-neutral-900 focus:text-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:mb-0 lg:mt-0"
             href="#"
           >
-            <img
-              src="/Images/logo.PNG"
-              className='w-16 md:w-24'
-              alt="TE Logo"
-              loading="lazy"
-            />
+           
           </a>
           {/* Left navigation links */}
           
