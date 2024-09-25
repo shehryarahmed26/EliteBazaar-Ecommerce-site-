@@ -7,7 +7,7 @@ const Cart = () => {
     
   return (
     <div className='container px-10 h-screen'>
-        { Cartitems.length > 1 ? 
+        { Cartitems.length >= 1 ? 
             Cartitems.map((item) => (
                 <div className='flex flex-col md:flex-row'>
                     <img className='h-[190px]' src={item.thumbnail} alt="" />
