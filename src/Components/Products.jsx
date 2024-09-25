@@ -49,7 +49,7 @@ const Products = () => {
       }
      </div>
      
-     <div className="flex w-full flex-wrap justify-center gap-5 px-8">
+     <div className="flex w-full flex-wrap px-4 justify-center gap-5 md:px-8">
      { products.map((item) => (
       <ProductCard key={item.id} item={item}/>
      ))}
