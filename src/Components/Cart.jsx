@@ -6,7 +6,7 @@ const Cart = () => {
     console.log('yeloo', Cartitems);
     
   return (
-    <div className='container px-10 h-screen'>
+    <div className='container px-10 min-h-screen'>
         { Cartitems.length >= 1 ? 
             Cartitems.map((item) => (
                 <div className='flex flex-col md:flex-row'>
