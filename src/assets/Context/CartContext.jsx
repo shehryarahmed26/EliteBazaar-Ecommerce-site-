@@ -22,8 +22,10 @@ const CartContextProvider = ({children}) => {
             setCartitems([...arr])
         } 
         const removeitemfromcart = (id) => {
-            const arr = [Cartitems]
-            const productindex = Cartitems.findIndex((id) => id == id)
+            const arr = Cartitems
+            const productindex = Cartitems.findIndex((data) => data.id == id)
+            console.log('remove', productindex);
+            
             arr.splice(productindex, 1)
             setCartitems([...arr])
         }

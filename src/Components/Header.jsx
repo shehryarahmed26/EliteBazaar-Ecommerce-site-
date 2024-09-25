@@ -12,7 +12,7 @@ useEffect(() => {
 }, [Cartitems])
 
   return (
-    <>
+    <div className='sticky top-0 bg-white'>
     {/* Main navigation container */}
     <nav className="flex-no-wrap relative flex w-full items-center justify-betwee py-2 shadow-dark-mild dark:bg-neutral-700 lg:flex-wrap lg:justify-start lg:py-4">
       <div className="flex w-full flex-wrap items-center justify-between px-3">
@@ -193,7 +193,7 @@ useEffect(() => {
         {/* Right elements */}
       </div>
     </nav>
-  </>
+  </div>
   
 
   )
