@@ -20,7 +20,7 @@ const Products = () => {
       .then((res) => res.json())
       .then((res) => {
         setproducts(res.products);
-        
+          
       });
       setloading(false)
     }, [categoryitem, skip]);

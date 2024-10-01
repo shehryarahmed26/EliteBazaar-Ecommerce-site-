@@ -16,7 +16,7 @@ const ProductCard = ({item}) => {
     // </Link>
     <Link to={`/Products/${id}`}>
       {/* <div className='w-[40%]'> */}
-    <div class="w-[150px] lg:w-[100%] md:w-1/2 p-4 shadow">
+    <div class="w-[150px] lg:w-[100%] md:w-1/2 p-4 shadow-sm shadow-gray-500">
     <a class="block relative h-24  rounded md:h-48">
       <img
         alt="ecommerce"

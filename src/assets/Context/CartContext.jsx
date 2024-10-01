@@ -30,12 +30,14 @@ const CartContextProvider = ({children}) => {
             setCartitems([...arr])
         }
         const isitemadded = (id) => {
-            const productindex = Cartitems.findIndex((id) => id == id)
+            const productindex = Cartitems.findIndex((data) => data.id == id)
+            console.log('Addtocart>>', productindex);
+            
             if (productindex == -1) {
                 return null
             }
             else {
-                Cartitems[productindex]
+                return Cartitems[productindex]
             }
         }
     return (
