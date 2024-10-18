@@ -1,12 +1,14 @@
 import { Badge } from 'antd'
 import React, { useEffect, useState } from 'react'
-import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Link, Navigate, Route, Routes, useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
 import { CartContext } from '../assets/Context/CartContext'
 
 const Header = () => {
 const {Cartitems} = useContext(CartContext)
 const [shadow, setshadow] = useState('')
+const [search, setsearch] = useState('')
+const Navigate = useNavigate()
 useEffect(() => {
   console.log(Cartitems);
   
@@ -19,6 +21,12 @@ window.addEventListener('scroll', () => {
     setshadow('')
   }
 })
+const handlesearch = (e) => {
+  if(e.key === 'Enter') {
+  Navigate(`/Search/${search}`)
+  setsearch('')
+  }
+}
 
   return (
     <div className={`sticky top-0 bg-white ${shadow}  z-10`}>
@@ -54,13 +62,14 @@ window.addEventListener('scroll', () => {
         {/* Right elements */}
         <div className="relative flex items-center">
           {/* Icon */}
+            <input onKeyDown={handlesearch} value={search} onChange={(e) => setsearch(e.target.value)} className='border mr-5 rounded px-2 placeholder:text-sm placeholder:font-thin focus:border-1 focus:outline-none' placeholder='Search Your Item' type="text" name="" id="" />
           <a className=" me-1 text-neutral-600 dark:text-white" href="#">
           <Link to={'/Cart'}>
             <span className="[&>svg]:w-5 flex">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
-                fill="currentColor"
+                fill=""
                 >
                 <path d="M2.25 2.25a.75.75 0 000 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 00-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 000-1.5H5.378A2.25 2.25 0 017.5 15h11.218a.75.75 0 00.674-.421 60.358 60.358 0 002.96-7.228.75.75 0 00-.525-.965A60.864 60.864 0 005.68 4.509l-.232-.867A1.875 1.875 0 003.636 2.25H2.25zM3.75 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zM16.5 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" />
               </svg>
@@ -88,10 +97,10 @@ window.addEventListener('scroll', () => {
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
-                  fill="currentColor"
+                  fill=""
                 >
                   <path
-                    fillRule="evenodd"
+                    fillRule=""
                     d="M5.25 9a6.75 6.75 0 0113.5 0v.75c0 2.123.8 4.057 2.118 5.52a.75.75 0 01-.297 1.206c-1.544.57-3.16.99-4.831 1.243a3.75 3.75 0 11-7.48 0 24.585 24.585 0 01-4.831-1.244.75.75 0 01-.298-1.205A8.217 8.217 0 005.25 9.75V9zm4.502 8.9a2.25 2.25 0 104.496 0 25.057 25.057 0 01-4.496 0z"
                     clipRule="evenodd"
                   />

@@ -61,8 +61,10 @@ const Products = () => {
         setloading(false)
       });
   }, []);
+  window.scroll(0, 0)
+
   return (
-    <div >
+    <div className="min-h-screen" >
     {loading ? 
      <div className="w-full h-screen flex justify-center items-center -translate-y-36"><BarLoader color="#1aafc2" className="" /></div> :
      <div>
