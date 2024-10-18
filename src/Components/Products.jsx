@@ -69,13 +69,13 @@ const Products = () => {
        <Banner/>
       <div className="flex flex-col justify-center flex-wrap mb-8 mx-5">
         <h3 className="text-3xl my-5 font-semibold">Top Categories</h3>
-      <div className="flex w-full justify-center">
+      <div className="flex w-full justify-center gap-2">
 
       {
         categoriesarr.map((category) => (
           // <button onClick={() => setcategoryitem(category.slug)} className={`${categoryitem === category.slug ? 'bg-blue-600 text-white' : 'bg-gray-200 text-black'} px-3 rounded mx-1 my-1 text-center text-[10px] md:text-lg `}>{category.name}</button>
           <div>
-            <img onClick={() => setcategoryitem(category.slug)} className="w-[80px] mx-10 my-4" src={`${category.img}`} alt="" />
+            <img onClick={() => setcategoryitem(category.slug)} className="w-[30px] md:w-[80px] mx-1 md:mx-10 my-4" src={`${category.img}`} alt="" />
           </div>
            ))
           }
