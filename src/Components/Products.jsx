@@ -75,7 +75,7 @@ const Products = () => {
         categoriesarr.map((category) => (
           // <button onClick={() => setcategoryitem(category.slug)} className={`${categoryitem === category.slug ? 'bg-blue-600 text-white' : 'bg-gray-200 text-black'} px-3 rounded mx-1 my-1 text-center text-[10px] md:text-lg `}>{category.name}</button>
           <div>
-            <img onClick={() => setcategoryitem(category.slug)} className="w-[30px] md:w-[80px] mx-1 md:mx-10 my-4" src={`${category.img}`} alt="" />
+            <img onClick={() => setcategoryitem(category.slug)} className="w-[50px] md:w-[80px] mx-1 md:mx-10 my-4" src={`${category.img}`} alt="" />
           </div>
            ))
           }
