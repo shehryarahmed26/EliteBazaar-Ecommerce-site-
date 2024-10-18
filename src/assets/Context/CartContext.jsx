@@ -29,6 +29,9 @@ const CartContextProvider = ({children}) => {
             arr.splice(productindex, 1)
             setCartitems([...arr])
         }
+        const addquantity = (item) => {
+            item.quantity++
+        }
         const isitemadded = (id) => {
             const productindex = Cartitems.findIndex((data) => data.id == id)
             console.log('Addtocart>>', productindex);
@@ -41,7 +44,7 @@ const CartContextProvider = ({children}) => {
             }
         }
     return (
-        <CartContext.Provider value={{Addtocart, Cartitems, removeitemfromcart, isitemadded}}>
+        <CartContext.Provider value={{Addtocart, Cartitems, removeitemfromcart, isitemadded, addquantity}}>
             {children}
         </CartContext.Provider>
     )

@@ -11,7 +11,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
-    <Notice/>
+    {/* <Notice/> */}
     <Header/>
     <Routes>
       <Route path="/" element={<Products/>}/>

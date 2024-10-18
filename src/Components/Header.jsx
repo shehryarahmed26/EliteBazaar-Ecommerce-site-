@@ -1,18 +1,27 @@
 import { Badge } from 'antd'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
 import { useContext } from 'react'
 import { CartContext } from '../assets/Context/CartContext'
 
 const Header = () => {
 const {Cartitems} = useContext(CartContext)
+const [shadow, setshadow] = useState('')
 useEffect(() => {
   console.log(Cartitems);
   
 }, [Cartitems])
+window.addEventListener('scroll', () => {
+  if(window.scrollY > 30) {
+    setshadow('shadow-md')
+  }
+  else {
+    setshadow('')
+  }
+})
 
   return (
-    <div className='sticky top-0 bg-white '>
+    <div className={`sticky top-0 bg-white ${shadow}  z-10`}>
     {/* Main navigation container */}
     <nav className="flex-no-wrap relative flex w-full items-center justify-betwee py-2 shadow-dark-mild dark:bg-neutral-700 lg:flex-wrap lg:justify-start lg:py-4">
       <div className="flex w-full flex-wrap items-center justify-between px-3">
