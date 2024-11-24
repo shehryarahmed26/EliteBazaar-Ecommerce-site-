@@ -3,12 +3,16 @@ import React, { useEffect, useState } from 'react'
 import { BrowserRouter, Link, Navigate, Route, Routes, useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
 import { CartContext } from '../assets/Context/CartContext'
+import { AuthContext } from '../assets/Context/AuthContext'
+import { auth, onAuthStateChanged, signOut } from '../utils/firebase'
 
 const Header = () => {
+  const {user, setuser} = useContext(AuthContext)
 const {Cartitems} = useContext(CartContext)
 const [shadow, setshadow] = useState('')
 const [search, setsearch] = useState('')
 const Navigate = useNavigate()
+const [logoutflang, setlogoutflang] = useState(true)
 useEffect(() => {
   console.log(Cartitems);
   
@@ -27,6 +31,20 @@ const handlesearch = (e) => {
   setsearch('')
   }
 }
+const handlelogout = async () => {
+  try {
+    await signOut(auth)
+    console.log('User Signout Successfully');
+    setuser('')
+    setlogoutflang(false)
+    
+      }
+      catch (e) {
+        console.log(e);       
+      }
+    }
+  
+
 
   return (
     <div className={`sticky top-0 bg-white ${shadow}  z-10`}>
@@ -41,6 +59,15 @@ const handlesearch = (e) => {
               alt="TE Logo"
               loading="lazy"
             /> </Link>
+            <Link to={'/products'}>
+            <a href="#" className='mx-4 hover:text-blue-900 transition-all'>Products</a>
+            </Link>
+            <Link to={'/features'}>
+            <a href="#" className='mx-4 hover:text-blue-900 transition-all' >Features</a>
+            </Link>
+            <Link to={'/aboutus'}>
+            <a href="#" className='mx-4 hover:text-blue-900 transition-all'>About us</a>
+            </Link>
         {/* </button> */}
         {/* Collapsible navigation container */}
         <div
@@ -84,33 +111,7 @@ const handlesearch = (e) => {
             data-twe-dropdown-alignment="end"
           >
             {/* First dropdown trigger */}
-            <a
-              className="me-4 flex items-center text-neutral-600 dark:text-white"
-              href="#"
-              id="dropdownMenuButton1"
-              role="button"
-              data-twe-dropdown-toggle-ref=""
-              aria-expanded="false"
-            >
-              {/* Dropdown trigger icon */}
-              <span className="[&>svg]:w-5">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill=""
-                >
-                  <path
-                    fillRule=""
-                    d="M5.25 9a6.75 6.75 0 0113.5 0v.75c0 2.123.8 4.057 2.118 5.52a.75.75 0 01-.297 1.206c-1.544.57-3.16.99-4.831 1.243a3.75 3.75 0 11-7.48 0 24.585 24.585 0 01-4.831-1.244.75.75 0 01-.298-1.205A8.217 8.217 0 005.25 9.75V9zm4.502 8.9a2.25 2.25 0 104.496 0 25.057 25.057 0 01-4.496 0z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </span>
-              {/* Notification counter */}
-              <span className="absolute -mt-4 ms-2.5 rounded-full bg-danger px-[0.35em] py-[0.15em] text-[0.6rem] font-bold leading-none text-white">
-                1
-              </span>
-            </a>
+            
             {/* First dropdown menu */}
             <ul
               className="absolute z-[1000] float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg data-[twe-dropdown-show]:block dark:bg-surface-dark"
@@ -154,23 +155,21 @@ const handlesearch = (e) => {
             data-twe-dropdown-alignment="end"
           >
             {/* Second dropdown trigger */}
-            <a
-              className="flex items-center whitespace-nowrap transition duration-150 ease-in-out motion-reduce:transition-none"
-              href="#"
-              id="dropdownMenuButton2"
-              role="button"
-              data-twe-dropdown-toggle-ref=""
-              aria-expanded="false"
-            >
-              {/* User avatar */}
-              <img
-                src="https://tecdn.b-cdn.net/img/new/avatars/2.jpg"
-                className="rounded-full"
-                style={{ height: 25, width: 25 }}
-                alt=""
-                loading="lazy"
-              />
-            </a>
+            {
+            user ? 
+            <div className="user relative">
+              <p onClick={() => setlogoutflang(!logoutflang)} className='text-xs hover:text-blue-950 transition-all cursor-pointer'>{user?.email}</p>
+              {logoutflang ? <button onClick={handlelogout} className='logoutbtn absolute top-4 right-14 bg-slate-300 text-sm my-1 px-2 rounded '>Logout</button> : ''}
+              </div> : 
+              <div className="authentication">
+              <Link to={'/signup'}>
+            <a href="#"  className='bg-blue-500 rounded px-2 py-1 mx-2 text-white'>Signup</a>
+            </Link>
+            <Link to={'/login'}>
+            <a href="#"  className='bg-black rounded px-2 py-1 text-white'>Login</a>
+            </Link>
+            </div>
+            }
             {/* Second dropdown menu */}
             <ul
               className="absolute z-[1000] float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg data-[twe-dropdown-show]:block dark:bg-surface-dark"

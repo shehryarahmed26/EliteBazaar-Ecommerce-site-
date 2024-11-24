@@ -24,8 +24,10 @@ const CartContextProvider = ({children}) => {
         const decreasequantity  = (id) => {
             const arr = Cartitems
             const productindex = Cartitems.findIndex((data) => data.id == id);
-             arr[productindex].quantity--           
+            if (arr[productindex].quantity > 0) {
+                arr[productindex].quantity--           
                 setCartitems([...arr])
+            }
             } 
         const removeitemfromcart = (id) => {
             const arr = Cartitems

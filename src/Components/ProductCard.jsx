@@ -5,6 +5,10 @@ import { CartContext } from '../assets/Context/CartContext'
 const ProductCard = ({item}) => {
     const { id, title, price, rating, thumbnail, brand, category} = item
     const {Addtocart} = useContext(CartContext)
+    console.log(item);
+    
+
+  
 
   return (
     // <Link>
@@ -31,7 +35,8 @@ const ProductCard = ({item}) => {
       <h2 class="text-gray-900 title-font  text-xs md:text-lg font-medium">
         {title}
       </h2>
-      <p class="mt-1 text-orange-700">${price}.00</p>
+      <p class="mt-1 ">${price}.00</p>
+      {/* <p>{crossprice}</p> */}
       {/* <h2 className='bg-blue-700 text-white text-center w-fit px-6 my-3 py-1 mx-auto'>Add to Cart</h2> */}
     </div>
   </div>

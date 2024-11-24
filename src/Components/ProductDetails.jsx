@@ -41,15 +41,15 @@ const {Addtocart, isitemadded} = useContext(CartContext)
                   {data.title}
                 </h1>
                 <div className="flex mb-4">
-                  <a className="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1">
+                  <a className="flex-grow text-blue-500 border-b-2 border-blue-500 py-2 text-lg px-1">
                     Description
                   </a>
-                  <a className="flex-grow border-b-2 border-gray-300 py-2 text-lg px-1">
+                  {/* <a className="flex-grow border-b-2 border-gray-300 py-2 text-lg px-1">
                     Reviews
                   </a>
                   <a className="flex-grow border-b-2 border-gray-300 py-2 text-lg px-1">
                     Details
-                  </a>
+                  </a> */}
                 </div>
                 <p className="leading-relaxed mb-4">{data.description}</p>
                 <div className="flex border-t border-gray-200 py-2">
@@ -60,15 +60,15 @@ const {Addtocart, isitemadded} = useContext(CartContext)
                   <span className="text-gray-500">Size</span>
                   <span className="ml-auto text-gray-900">Medium</span>
                 </div>
-                <div className="flex border-t border-b mb-6 border-gray-200 py-2">
+                {/* <div className="flex border-t border-b mb-6 border-gray-200 py-2">
                   <span className="text-gray-500">Quantity</span>
                   <span className="ml-auto text-gray-900">1</span>
-                </div>
+                </div> */}
                 <div className="flex">
                   <span className="title-font font-medium text-2xl text-gray-900">
                     ${data.price}
                   </span>
-                  <button onClick={() => {Addtocart(data)}} className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
+                  <button onClick={() => {Addtocart(data)}} className="flex ml-auto text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-700 rounded">
                     {isitemadded(data.id) ? `Added ${data?.quantity}` : 'Add to Cart'}
                   </button>
                   <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
