@@ -90,71 +90,217 @@ const Featured = () => {
       <ProductCard key={item.id} item={item}/>
      ))}
      </div> 
-     <footer className="text-gray-600 body-font">
-  <div className="container px-12 py-8 mx-auto flex items-center justify-between sm:flex-row flex-col">
-    <img className="w-28" src="/Images/logo.PNG" alt="" />
-    <p className="text-sm w-[100%] text-center text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
-      © 2024 Elitebazaar —All Rights Reserved
-    </p>
-    <span className="flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
-      <a className="text-gray-500">
-        <svg
-          fill="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          className="w-5 h-5 hover:text-blue-400 transition-all"
-          viewBox="0 0 24 24"
-        >
-          <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
-        </svg>
-      </a>
-      <a className="ml-3 text-gray-500">
-        <svg
-          fill="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          className="w-5 h-5 hover:text-blue-400 transition-all"
-          viewBox="0 0 24 24"
-        >
-          <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
-        </svg>
-      </a>
-      <a className="ml-3 text-gray-500">
-        <svg
-          fill="none"
-          stroke="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          className="w-5 h-5 hover:text-blue-400 transition-all"
-          viewBox="0 0 24 24"
-        >
-          <rect width={20} height={20} x={2} y={2} rx={5} ry={5} />
-          <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01" />
-        </svg>
-      </a>
-      <a className="ml-3 text-gray-500">
-        <svg
-          fill="currentColor"
-          stroke="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={0}
-          className="w-5 h-5 hover:text-blue-400 transition-all"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke="none"
-            d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
+     <section className="text-gray-600 body-font">
+  <div className="container px-5 py-24 mx-auto">
+    <div className="flex flex-wrap -m-4">
+      <div className="lg:w-1/3 lg:mb-0 mb-6 p-4">
+        <div className="h-full text-center">
+          <img
+            alt="testimonial"
+            className="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100"
+            src="/Images/shahab.jfif"
           />
-          <circle cx={4} cy={4} r={2} stroke="none" />
-        </svg>
-      </a>
-    </span>
+          <p className="leading-relaxed">
+          Shahabuddin is a skilled software developer with expertise in creating innovative solutions. he excels at crafting modern, user-friendly interfaces. 
+          </p>
+          <span className="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4" />
+          <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm">
+            Shahabuddin Ghori
+          </h2>
+          <p className="text-gray-500">Software Developer</p>
+        </div>
+      </div>
+      <div className="lg:w-1/3 lg:mb-0 mb-6 p-4">
+        <div className="h-full text-center">
+          <img
+            alt="testimonial"
+            className="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100"
+            src="/Images/siddiqui.jfif"
+          />
+          <p className="leading-relaxed">
+          Siddiqui Ahmed is a creative UI/UX designer, crafting user-friendly and visually appealing digital experiences.
+          </p>
+          <span className="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4" />
+          <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm">
+            Siddiqui Ahmed
+          </h2>
+          <p className="text-gray-500">UI/UX Designer</p>
+        </div>
+      </div>
+      <div className="lg:w-1/3 lg:mb-0 p-4">
+        <div className="h-full text-center">
+          <img
+            alt="testimonial"
+            className="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100"
+            src="/Images/inam.jfif"
+          />
+          <p className="leading-relaxed">
+          Inam Ullah is a skilled SQA engineer, ensuring software quality through meticulous testing and efficient debugging techniques.
+          </p>
+          <span className="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4" />
+          <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm">
+            Inam Ullah Khan
+          </h2>
+          <p className="text-gray-500">SQA Engineer</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+     <footer className="text-gray-600 body-font">
+  <div className="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+    <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+      <img className="w-36" src="/Images/logo.PNG" alt="" />
+      <p className="mt-2 text-sm text-gray-500">
+      EliteBazaar is an online shopping website offering quality products with secure payment and fast delivery.
+      </p>
+    </div>
+    <div className="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
+      <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
+          CATEGORIES
+        </h2>
+        <nav className="list-none mb-10">
+          <li>
+            <a className="text-gray-600 hover:text-gray-800">First Link</a>
+          </li>
+          <li>
+            <a className="text-gray-600 hover:text-gray-800">Second Link</a>
+          </li>
+          <li>
+            <a className="text-gray-600 hover:text-gray-800">Third Link</a>
+          </li>
+          <li>
+            <a className="text-gray-600 hover:text-gray-800">Fourth Link</a>
+          </li>
+        </nav>
+      </div>
+      <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
+          CATEGORIES
+        </h2>
+        <nav className="list-none mb-10">
+          <li>
+            <a className="text-gray-600 hover:text-gray-800">First Link</a>
+          </li>
+          <li>
+            <a className="text-gray-600 hover:text-gray-800">Second Link</a>
+          </li>
+          <li>
+            <a className="text-gray-600 hover:text-gray-800">Third Link</a>
+          </li>
+          <li>
+            <a className="text-gray-600 hover:text-gray-800">Fourth Link</a>
+          </li>
+        </nav>
+      </div>
+      <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
+          CATEGORIES
+        </h2>
+        <nav className="list-none mb-10">
+          <li>
+            <a className="text-gray-600 hover:text-gray-800">First Link</a>
+          </li>
+          <li>
+            <a className="text-gray-600 hover:text-gray-800">Second Link</a>
+          </li>
+          <li>
+            <a className="text-gray-600 hover:text-gray-800">Third Link</a>
+          </li>
+          <li>
+            <a className="text-gray-600 hover:text-gray-800">Fourth Link</a>
+          </li>
+        </nav>
+      </div>
+      <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
+          CATEGORIES
+        </h2>
+        <nav className="list-none mb-10">
+          <li>
+            <a className="text-gray-600 hover:text-gray-800">First Link</a>
+          </li>
+          <li>
+            <a className="text-gray-600 hover:text-gray-800">Second Link</a>
+          </li>
+          <li>
+            <a className="text-gray-600 hover:text-gray-800">Third Link</a>
+          </li>
+          <li>
+            <a className="text-gray-600 hover:text-gray-800">Fourth Link</a>
+          </li>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <div className="bg-gray-100">
+    <div className="container py-4 px-5 flex flex-wrap flex-col justify-center gap-5 sm:flex-row">
+      <p className="text-gray-500 text-sm text-center ">
+        © 2024 Elitebazaar — All Rights Reserved
+      </p>
+      <span className="inline-flex  sm:mt-0 mt-2 justify-center">
+        <a className="text-gray-500">
+          <svg
+            fill="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            className="w-5 h-5"
+            viewBox="0 0 24 24"
+          >
+            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+          </svg>
+        </a>
+        <a className="ml-3 text-gray-500">
+          <svg
+            fill="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            className="w-5 h-5"
+            viewBox="0 0 24 24"
+          >
+            <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+          </svg>
+        </a>
+        <a className="ml-3 text-gray-500">
+          <svg
+            fill="none"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            className="w-5 h-5"
+            viewBox="0 0 24 24"
+          >
+            <rect width={20} height={20} x={2} y={2} rx={5} ry={5} />
+            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01" />
+          </svg>
+        </a>
+        <a className="ml-3 text-gray-500">
+          <svg
+            fill="currentColor"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={0}
+            className="w-5 h-5"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke="none"
+              d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
+            />
+            <circle cx={4} cy={4} r={2} stroke="none" />
+          </svg>
+        </a>
+      </span>
+    </div>
   </div>
 </footer>
+
 
      </div>
      }

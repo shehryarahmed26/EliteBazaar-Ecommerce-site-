@@ -8,6 +8,8 @@ import { auth, onAuthStateChanged, signOut } from '../utils/firebase'
 
 const Header = () => {
   const {user, setuser} = useContext(AuthContext)
+  // console.log(user);
+  
 const {Cartitems} = useContext(CartContext)
 const [shadow, setshadow] = useState('')
 const [search, setsearch] = useState('')
@@ -158,12 +160,12 @@ const handlelogout = async () => {
             {
             user ? 
             <div className="user relative">
-              <p onClick={() => setlogoutflang(!logoutflang)} className='text-xs hover:text-blue-950 transition-all cursor-pointer'>{user?.email}</p>
+              <p onClick={() => setlogoutflang(!logoutflang)} className='text-xs hover:text-blue-950 transition-all cursor-pointer'>{user?.displayName}</p>
               {logoutflang ? <button onClick={handlelogout} className='logoutbtn absolute top-4 right-14 bg-slate-300 text-sm my-1 px-2 rounded '>Logout</button> : ''}
               </div> : 
               <div className="authentication">
               <Link to={'/signup'}>
-            <a href="#"  className='bg-blue-500 rounded px-2 py-1 mx-2 text-white'>Signup</a>
+            {/* <a href="#"  className='bg-blue-500 rounded px-2 py-1 mx-2 text-white'>Signup</a> */}
             </Link>
             <Link to={'/login'}>
             <a href="#"  className='bg-black rounded px-2 py-1 text-white'>Login</a>
