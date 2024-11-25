@@ -59,9 +59,11 @@ const Products = () => {
       .then((res) => {
         setcategories(res);
         setloading(false)
+        
       });
   }, []);
   window.scroll(0, 0)
+  console.log(categories);
 
   return (
     <div className="min-h-screen" >
