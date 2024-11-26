@@ -7,19 +7,19 @@ const Banner = () => {
     <div>
         <Carousel autoPlay={true} infiniteLoop={true} showStatus={false} showThumbs={false} >
                 <div>
-                    <img src="/Images/banner1.webp" />
+                    <img src="/Images/banner-1.jpg" />
                 </div>
                 <div>
-                    <img src="/Images/banner2.webp" />
+                    <img src="/Images/banner-2.jpg" />
                 </div>
                 <div>
-                    <img src="/Images/banner3.webp" />
+                    <img src="/Images/banner-3.jpg" />
                 </div>
                 <div>
-                    <img src="/Images/banner4.webp" />
+                    <img src="/Images/banner-4.webp" />
                 </div>
                 <div>
-                    <img src="/Images/banner5.webp" />
+                    <img src="/Images/banner-5.webp" />
                 </div>
             </Carousel>
     </div>

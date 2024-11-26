@@ -51,7 +51,7 @@ const handlelogout = async () => {
   return (
     <div className={`sticky top-0 bg-white ${shadow}  z-20`}>
     {/* Main navigation container */}
-    <nav className="flex-no-wrap relative flex w-full items-center justify-betwee py-2 shadow-dark-mild dark:bg-neutral-700 lg:flex-wrap lg:justify-start lg:py-4">
+    <nav className="flex-no-wrap relative flex w-full items-center justify-betwee py-2 shadow-dark-mild lg:flex-wrap lg:justify-start lg:py-4">
       <div className="flex w-full flex-wrap items-center justify-between px-3">
         
           {/* Hamburger icon */}
@@ -61,7 +61,8 @@ const handlelogout = async () => {
               alt="TE Logo"
               loading="lazy"
             /> </Link>
-            <Link to={'/products'}>
+          <div className="links hidden sm:flex">
+          <Link to={'/products'}>
             <a href="#" className='mx-4 hover:text-blue-900 transition-all'>Products</a>
             </Link>
             <Link to={'/Features'}>
@@ -70,6 +71,7 @@ const handlelogout = async () => {
             <Link to={'/Aboutus'}>
             <a href="#" className='mx-4 hover:text-blue-900 transition-all'>About us</a>
             </Link>
+          </div>
         {/* </button> */}
         {/* Collapsible navigation container */}
         <div

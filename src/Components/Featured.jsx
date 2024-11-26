@@ -94,6 +94,9 @@ const Featured = () => {
       <ProductCard key={item.id} item={item}/>
      ))}
      </div> 
+     <div className="banner my-8">
+      <img src="/Images/lcd.webp" alt="" />
+     </div>
      <section data-aos='zoom-in' className="text-gray-600 body-font">
   <div className="container px-5 py-24 mx-auto">
     <div className="flex flex-wrap -m-4">
