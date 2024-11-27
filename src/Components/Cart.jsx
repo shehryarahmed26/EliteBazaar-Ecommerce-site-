@@ -20,8 +20,8 @@ const Cart = () => {
   return (
     <div className='min-h-screen'>
         { Cartitems.length >= 1 ? 
-      <div className='flex flex-col md:flex-row justify-center px-6'>
-        <div className='container px-10 min-h-screen mx-auto'>
+      <div className='flex flex-col md:flex-row justify-center px-2'>
+        <div className='container px-0 min-h-screen mx-auto'>
         {    Cartitems.map((item) => (
                 <div key={item.id} className='flex flex-col justify-center items-center md:flex-row shadow-lg p-4 mt-4'>
                     <img className='w-[70%] md:w-[20%]' src={item.thumbnail} alt="" />
@@ -39,7 +39,7 @@ const Cart = () => {
                 </div>
             )) }
     </div>
-    <div className="payment-section  flex-col mt-5 md:mt-0 flex-wrap justify-center md:justify-start gap-4 md:gap-5 md:flex-col w-[350px] md:w-[350px] md:h-[400px] md:p-8 md:border">
+    <div className="payment-section  flex-col mt-5 md:mt-0 flex-wrap justify-center md:justify-start gap-4 md:gap-5 md:flex-col w-[100%] md:w-[350px] md:h-[400px] md:p-8 md:border">
         <h2 className='text-2xl  md:text-3xl hidden md:block font-bold'>Summary</h2>
         <div className='flex justify-between items-center w-[110px] md:w-full'>
             <h3 className='text-sm my-2 md:text-base font-bold gap-2'>Total Quantity</h3>
@@ -59,7 +59,7 @@ const Cart = () => {
             <p className='font-semibold text-xs md:text-base'>${Grandtotal}</p>
         </div>
         <Link to={'/Checkout'}>
-        <button className='bg-black w-full text-xs md:text-base px-2 text-white font-semibold rounded-md py-1'>Go To Checkout</button>
+        <button className='bg-black my-6 sm:my-0 w-full text-xs md:text-base px-2 text-white font-semibold rounded-md py-1'>Go To Checkout</button>
         </Link>
     </div> 
     </div> : 
