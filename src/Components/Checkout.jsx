@@ -115,12 +115,14 @@ const Checkout = () => {
       {showPopup && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-85 z-50">
           <div className="bg-white rounded-lg shadow-lg h-[300px] p-6 w-[86%] md:w-[50%] relative flex flex-col items-center justify-center gap-6">
+            <Link to={'/'}>
             <button
               onClick={closePopup}
               className="absolute top-2 right-2 text-gray-400 hover:text-red-500 text-xl"
-            >
+              >
               &times;
             </button>
+                </Link>
             <h2 className="text-2xl md:text-4xl font-bold text-center text-green-600 mb-4">
               Order Placed Successfully!
             </h2>
