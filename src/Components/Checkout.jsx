@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Checkout = () => {
-    window.scroll(0, 0)
 
   const [formData, setFormData] = useState({
     fullName: "",
