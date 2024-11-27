@@ -150,7 +150,7 @@ const handlelogout = async () => {
     <div className='mobile-search flex justify-center px-10 py-4 sm:hidden'>
                         <input onKeyDown={handlesearch} value={search} onChange={(e) => setsearch(e.target.value)} className='border border-gray-500 mr-5 rounded px-2 w-[400px] py-1 placeholder:text-sm placeholder:font-thin focus:border-1 focus:outline-none placeholder:text-gray-700' placeholder='Search Your Item' type="text" name="" id="" />
                         <button onClick={handlesearchbtn} className='bg-blue-500 text-white px-4 py-1 rounded-md'>Search</button>
-                        <ToastContainer theme='dark' limit={1}   />
+                        <ToastContainer theme='dark' limit={1} autoClose={1000}   />
 
 
           </div>

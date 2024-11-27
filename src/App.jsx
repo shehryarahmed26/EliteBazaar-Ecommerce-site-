@@ -12,6 +12,7 @@ import SignIn from "./Components/signin";
 import Featured from "./Components/Featured";
 import Features from "./Components/Features";
 import AboutUs from "./Components/Aboutus";
+import Checkout from "./Components/Checkout";
 
 const App = () => {
 
@@ -29,6 +30,7 @@ const App = () => {
       <Route path="/Search/:id" element={<Searchproducts/>}/>
       <Route path="/login" element={<Login/>}/>
       <Route path="/signup" element={<SignIn/>}/>
+      <Route path="/Checkout" element={<Checkout/>}/>
     </Routes>
     <Footer/> 
     </BrowserRouter></div>
