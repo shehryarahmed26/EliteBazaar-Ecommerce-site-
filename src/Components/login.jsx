@@ -32,7 +32,7 @@ const Login = () => {
       succestoast();
     }
     catch (e) {
-      const errortoast = () => toast.error('Incorrect Email or Password !')
+      const errortoast = () => toast.error('Incorrect Email or Password !', {closeOnClick: true})
       errortoast();
       setPassword('')
       console.log(e);

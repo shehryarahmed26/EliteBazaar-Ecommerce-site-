@@ -3,6 +3,8 @@ import { CartContext } from '../assets/Context/CartContext'
 import { MinusOutlined, PlusOutlined } from '@ant-design/icons'
 // /import {PlusOutlined} from 'antd';
 // import {PlusSquareFilled} from 'antd/'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Cart = () => {
     const {Cartitems, removeitemfromcart, addquantity, Addtocart, decreasequantity} = useContext(CartContext)
@@ -12,7 +14,7 @@ const Cart = () => {
     const Grandtotal = TotalAmouont + Deliverycharges
     const  TotalQuantity = Cartitems.reduce((total, obj) => total + obj.quantity, 0)
     // console.log(TotalAmouont);
-    
+    const removetoast = () => toast('Item Remove')
     
   return (
     <div className='min-h-screen'>
@@ -31,7 +33,7 @@ const Cart = () => {
                      <p>{item.quantity}</p>
                      <div onClick={() => Addtocart(item)} className='hover:bg-red-600 border hover:text-white px-1'><PlusOutlined/></div>
                      </div>
-                    <p onClick={() => removeitemfromcart(item.id)} className='text-center my-3 px-2 text-red-600 font-bold border border-red-600 cursor-pointer'>Remove Item</p>
+                    <p onClick={() => { removetoast(), removeitemfromcart(item.id)}} className='text-center my-3 px-2 text-red-600 font-bold border border-red-600 cursor-pointer'>Remove Item</p>
                     </div>
                 </div>
             )) }

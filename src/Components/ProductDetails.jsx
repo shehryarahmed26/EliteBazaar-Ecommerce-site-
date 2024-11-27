@@ -3,12 +3,16 @@ import { useParams } from "react-router-dom";
 import { BarLoader } from "react-spinners";
 import { CartContext } from "../assets/Context/CartContext";
 import Item from "antd/es/list/Item";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ProductDetails = () => {
 const {Addtocart, isitemadded} = useContext(CartContext)
   const [data, setdata] = useState({});
   const { id } = useParams();
   const [loading, setloading] = useState(true);
+  const toastcart = () => toast.success('Item Added to Cart Successfully', {closeOnClick: true,})
+  
 
   useEffect(() => {
     setloading(true)
@@ -20,7 +24,10 @@ const {Addtocart, isitemadded} = useContext(CartContext)
       });
   }, []);
   window.scroll(0, 0)
-
+  const handlecart = () => {
+    toastcart()  
+    Addtocart(data)   
+  }
   return (
     <div className="min-h-screen">
       {
@@ -68,8 +75,8 @@ const {Addtocart, isitemadded} = useContext(CartContext)
                   <span className="title-font font-medium text-2xl text-gray-900">
                     ${data.price}
                   </span>
-                  <button onClick={() => {Addtocart(data)}} className="flex ml-auto text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-700 rounded">
-                    {isitemadded(data.id) ? `Added ${data?.quantity}` : 'Add to Cart'}
+                  <button onClick={handlecart} className="flex ml-auto text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-700 rounded">
+                    {isitemadded(data?.id) ? `Added ${data?.quantity}` : 'Add to Cart'}
                   </button>
                   <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
                     <svg
@@ -96,7 +103,8 @@ const {Addtocart, isitemadded} = useContext(CartContext)
       </div>
       }
       
-      
+      <ToastContainer theme="dark" position="top-center" autoClose={1000}
+      />
     </div>
   );
 };
