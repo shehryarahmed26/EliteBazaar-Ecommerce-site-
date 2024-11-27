@@ -1,4 +1,6 @@
 import React, { useContext, useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 import {
   Container,
   Box,
@@ -14,6 +16,7 @@ import { AuthContext } from "../assets/Context/AuthContext";
 // import { Visibility, VisibilityOff } from "@mui/icons-material";
 
 const Login = () => {
+  window.scroll(0, 0)
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -25,8 +28,13 @@ const Login = () => {
       const result = await signInWithEmailAndPassword(auth, email, password)
       setuser(result?.user)
       navigate('/')
+      const succestoast = () => toast.success('Login Successfull !')
+      succestoast();
     }
     catch (e) {
+      const errortoast = () => toast.error('Incorrect Email or Password !')
+      errortoast();
+      setPassword('')
       console.log(e);
       
     }
@@ -103,6 +111,7 @@ const Login = () => {
           </Link>
         </Typography>
       </Box>
+      <ToastContainer theme="dark"/>
     </Container>
   );
 };

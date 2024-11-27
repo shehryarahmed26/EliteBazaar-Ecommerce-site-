@@ -1,6 +1,8 @@
 import React from "react";
 
 const Features = () => {
+  window.scroll(0, 0)
+
   const features = [
     {
       title: "Free Shipping",

@@ -1,4 +1,6 @@
 import React, { useContext, useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 import {
   Container,
   Box,
@@ -24,8 +26,13 @@ const SignIn = () => {
   const [firstname, setfirstname] = useState('')
   const [lastname, setlastname] = useState('')
   const navigate = useNavigate();
+  const succestoast = () => toast.success('Sign up Successfull')
+  const errortoast = (message) => toast.error(message)
 
   const handleSignIn = async () => {
+    if (firstname && lastname && email && password) {
+
+    
     try {
       const user = await createUserWithEmailAndPassword(auth, email, password)
       console.log(user);
@@ -33,12 +40,18 @@ const SignIn = () => {
       setPassword('')
       setfirstname('')
       setlastname('')
+      succestoast();
       navigate('/login')
     }
     catch (err) {
+      errortoast();
       console.log(err);
       
     }
+  }
+  else {
+    errortoast('Plese fill all the fields')
+  }
     
   };
 
@@ -58,6 +71,7 @@ const SignIn = () => {
       // IdP data available using getAdditionalUserInfo(result)
       // ...
     }).catch((error) => {
+      setPassword('');
       // Handle Errors here.
       const errorCode = error.code;
       const errorMessage = error.message;
@@ -189,6 +203,7 @@ const SignIn = () => {
           </Button>
         </Box>
       </Box>
+      <ToastContainer theme="dark"/>
     </Container>
   );
 };

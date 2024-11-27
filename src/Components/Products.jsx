@@ -63,7 +63,7 @@ const Products = () => {
       });
   }, []);
   window.scroll(0, 0)
-  console.log(categories);
+  // console.log(categories);
 
   return (
     <div className="min-h-screen" >
@@ -85,7 +85,7 @@ const Products = () => {
           }
           </div>
      </div> */}
-     <h3 className="text-4xl my-5 font-semibold text-center">Products</h3>
+     <h3 className="text-4xl my-5 font-semibold text-center"> Top Products</h3>
 
      <div className="flex w-full flex-wrap px-4 justify-center gap-5 gap-y-10 md:px-8">
      { products.map((item) => (

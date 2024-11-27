@@ -8,7 +8,7 @@ const ProductCard = ({item}) => {
   aos.init()
     const { id, title, price, rating, thumbnail, brand, category} = item
     const {Addtocart} = useContext(CartContext)
-    console.log(item);
+    // console.log(item);
     
 
   

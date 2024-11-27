@@ -6,6 +6,7 @@ const AboutUs = () => {
     { value: "500+", label: "Trusted Partners" },
     { value: "5 Years", label: "Industry Experience" },
   ];
+  window.scroll(0, 0)
 
   return (
     <div className="bg-gray-50">
