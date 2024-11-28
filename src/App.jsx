@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Products from "./Components/Products";
 import Header from "./Components/Header";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import  ProductDetails  from "./Components/ProductDetails";
+import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
+import ProductDetails from "./Components/ProductDetails";
 import Notice from "./Components/Notice";
 import Footer from "./Components/Footer";
 import Cart from "./Components/Cart";
@@ -15,25 +15,39 @@ import AboutUs from "./Components/Aboutus";
 import Checkout from "./Components/Checkout";
 
 const App = () => {
-
   return (
-    <div className="min-h-screen"><BrowserRouter>
-    {/* <Notice/> */}
-    <Header/>
-    <Routes>
-      <Route path="/" element={<Featured/>}/>
-      <Route path="/products" element={<Products/>}/>
-      <Route path="/Features" element={<Features/>}/>
-      <Route path="/Aboutus" element={<AboutUs/>}/>
-      <Route path="/Products/:id" element={<ProductDetails/>}/>
-      <Route path="/Cart" element={<Cart/>}/>
-      <Route path="/Search/:id" element={<Searchproducts/>}/>
-      <Route path="/login" element={<Login/>}/>
-      <Route path="/signup" element={<SignIn/>}/>
-      <Route path="/Checkout" element={<Checkout/>}/>
-    </Routes>
-    <Footer/> 
-    </BrowserRouter></div>
+    <BrowserRouter>
+      <Routes>
+
+        {/* auth */}
+      {/* <Route path="/auth" element={<Outlet/>}> */}
+        <Route path="/auth/signup" element={<SignIn />} />
+        <Route path="/auth/login" element={<Login />} />
+      {/* </Route> */}
+
+      {/* user */}
+        <Route
+          element={
+            <>
+              <Header />
+              <Outlet />
+              <Footer />
+            </>
+          }
+        >
+          <Route path="/" element={<Featured />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/Features" element={<Features />} />
+          <Route path="/Aboutus" element={<AboutUs />} />
+          <Route path="/Products/:id" element={<ProductDetails />} />
+          <Route path="/Cart" element={<Cart />} />
+          <Route path="/Search/:id" element={<Searchproducts />} />
+          <Route path="/Checkout" element={<Checkout />} />
+        </Route>
+
+        {/* admin */}
+      </Routes>
+    </BrowserRouter>
   );
 };
 

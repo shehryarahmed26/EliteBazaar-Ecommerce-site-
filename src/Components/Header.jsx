@@ -5,7 +5,7 @@ import { useContext } from 'react'
 import { CartContext } from '../assets/Context/CartContext'
 import { AuthContext } from '../assets/Context/AuthContext'
 import { auth, onAuthStateChanged, signOut } from '../utils/firebase'
-import { FaRegHeart, FaRegUser } from "react-icons/fa";
+import { FaCaretDown, FaRegHeart, FaRegUser } from "react-icons/fa";
 import { IoCartOutline } from 'react-icons/io5'
 import { MdOutlineShoppingCart } from 'react-icons/md'
 import { ToastContainer, toast } from 'react-toastify';
@@ -20,7 +20,10 @@ const Header = () => {
   const searchalert = () => toast.error('Please Write something in Search Bar !')
   const logouttoast = () => toast('logout Successfull')
   const Navigate = useNavigate()
-  const [logoutflang, setlogoutflang] = useState(true)
+  const [logoutflang, setlogoutflang] = useState(false)
+ console.log(user);
+//  console.log('photorul >>', user.photoURL);
+ 
 
 useEffect(() => {
   // console.log(Cartitems);
@@ -103,7 +106,7 @@ const handlelogout = async () => {
      
         {/* Right elements */}
 
-        <div className="relative flex items-center">
+        <div className="relative flex items-center gap-2">
           {/* Icon */}
             {/* <a className=" me-1 text-neutral-600 dark:text-white" href="#"> */}
           <Link to={'/Cart'}>
@@ -112,6 +115,10 @@ const handlelogout = async () => {
               <Badge className='relative -top-3' count={Cartitems.length}/>
             </span>
                 </Link>
+                <Link to={'/auth/login'}>
+            <p className='text-lg'><FaRegHeart /></p>
+
+            </Link>
           {/* </a> */}
         
           <div
@@ -122,21 +129,23 @@ const handlelogout = async () => {
             {/* Second dropdown trigger */}
             {
             user ? 
-            <div className="user relative">
-              <p onClick={() => setlogoutflang(!logoutflang)} className='text-xs hover:text-blue-950 transition-all cursor-pointer'>{user?.displayName}</p>
-              {logoutflang ? <button onClick={handlelogout} className='logoutbtn absolute top-4 right-14 bg-slate-300 text-sm my-1 px-2 rounded '>Logout</button> : ''}
+                          <div className="user relative">
+              <p onClick={() => setlogoutflang(!logoutflang)} className='text-xs hover:text-blue-950 transition-all cursor-pointer ml-4 flex items-center gap-2 bg-gray-100 px-4 py-2 rounded'><img className='w-5 h-5 rounded-full' src={user?.photoURL} alt="" /> {user?.displayName.split(' ')[0]} <FaCaretDown />
+              </p>
+              {logoutflang ? <div className='bg-white p-6 rounded absolute right-0'>
+                <h3 className='font-semibold'>{user?.displayName}</h3>
+                <p>{user?.email}</p>
+                <button onClick={handlelogout} className='logoutbtn bg-black text-white text-sm my-1 px-4 py-1 rounded '>Logout</button>
+              </div> : ''}
               </div> : 
               <div className="authentication">
-              <Link to={'/signup'}>
+              <Link to={'/auth/signup'}>
             {/* <a href="#"  className='bg-blue-500 rounded px-2 py-1 mx-2 text-white'>Signup</a> */}
             </Link>
             <div className='flex gap-3'>
-              <Link to={'/login'}>
-            <p className='text-lg'><FaRegHeart /></p>
-
-            </Link>
-            <Link to={'/login'}>
-            <p className='text-lg'><FaRegUser /></p>
+              
+            <Link to={'/auth/login'}>
+            <p className='text-lg mx-3'><FaRegUser /></p>
 
             </Link>
             </div>

@@ -106,7 +106,7 @@ const Login = () => {
           variant="body2"
           sx={{ mt: 2, color: "gray", cursor: "pointer" }}
         >
-          Dont Have an Account ? <Link to={'/signup'}>
+          Dont Have an Account ? <Link to={'/auth/signup'}>
           <a href="#" className="text-blue-600">Signup</a>
           </Link>
         </Typography>
