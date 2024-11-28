@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <footer className="text-gray-600 body-font">
@@ -40,9 +42,11 @@ const Footer = () => {
               <li>
                 <a className="text-gray-600 hover:text-gray-800">Tablets</a>
               </li>
+              <Link to={`/search/smartphones`} >
               <li>
                 <a className="text-gray-600 hover:text-gray-800">Smartphones</a>
               </li>
+              </Link>
               <li>
                 <a className="text-gray-600 hover:text-gray-800">
                   Mobile Accessories

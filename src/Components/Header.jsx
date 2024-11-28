@@ -11,7 +11,18 @@ import { IoCartOutline } from 'react-icons/io5'
 import { MdOutlineShoppingCart } from 'react-icons/md'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import Box from '@mui/material/Box';
+import Drawer from '@mui/material/Drawer';
+import Button from '@mui/material/Button';
+import List from '@mui/material/List';
+import Divider from '@mui/material/Divider';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import InboxIcon from '@mui/icons-material/MoveToInbox';
+import MailIcon from '@mui/icons-material/Mail';
+import { Menu } from '@mui/icons-material'
 
 const Header = () => {
   const {user, setuser} = useContext(AuthContext) 
@@ -66,7 +77,27 @@ const handlelogout = async () => {
         console.log(e);       
       }
     }
+    const [open, setOpen] = React.useState(false);
 
+    const toggleDrawer = (newOpen) => () => {
+      setOpen(newOpen);
+    };
+    const DrawerList = (
+      <Box sx={{ width: 200 }} role="presentation" onClick={toggleDrawer(false)}>
+       <div className='pl-6 flex flex-col gap-4 mt-4 justify-center items-center'>
+        <img className='w-[150px]' src="/Images/logo.PNG" alt="" />
+        <Link to={'/products'}>
+        <p className='font-semibold hover:text-blue-500 transition-all'>Products</p>
+        </Link>
+        <Link to={'/Features'}>
+        <p className='font-semibold hover:text-blue-500 transition-all'>Features</p>
+        </Link>
+        <Link to={'/Aboutus'}>
+        <p className='font-semibold hover:text-blue-500 transition-all'>Aboutus</p>
+        </Link>
+       </div>
+      </Box>
+    );
   return (
     <div className={`sticky top-0 bg-white ${shadow}  z-20`}>
     {/* Main navigation container */}
@@ -75,13 +106,29 @@ const handlelogout = async () => {
         
           {/* Logo */}
 
-          <Link to={'/'}><img
+
+
+    <div className='flex sm:hidden'>
+      <button  onClick={toggleDrawer(true)}><Menu/></button>
+      <Link to={'/'}><img
               src="/Images/logo.PNG"
               className='w-16 md:w-24'
               alt="TE Logo"
               loading="lazy"
             /> </Link>
+      <Drawer open={open} onClose={toggleDrawer(false)}>
+        {DrawerList}
+      </Drawer>
+    </div>
 
+
+          
+    <Link to={'/'}><img
+              src="/Images/logo.PNG"
+              className='hidden sm:flex w-16 md:w-24'
+              alt="TE Logo"
+              loading="lazy"
+            /> </Link>
             {/* Left Links */}
 
           <div className="links hidden sm:flex">

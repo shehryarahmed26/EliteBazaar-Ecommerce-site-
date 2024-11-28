@@ -1,3 +1,5 @@
+'use strict'
+
 import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import { Pagination } from 'antd';

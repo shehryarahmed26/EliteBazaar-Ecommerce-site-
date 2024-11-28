@@ -1,3 +1,4 @@
+'use strict'
 import React, { useEffect, useState } from "react";
 import Products from "./Components/Products";
 import Header from "./Components/Header";
@@ -20,10 +21,10 @@ const App = () => {
       <Routes>
 
         {/* auth */}
-      {/* <Route path="/auth" element={<Outlet/>}> */}
+      <Route path="/auth" element={<Outlet/>}>
         <Route path="/auth/signup" element={<SignIn />} />
         <Route path="/auth/login" element={<Login />} />
-      {/* </Route> */}
+      </Route>
 
       {/* user */}
         <Route

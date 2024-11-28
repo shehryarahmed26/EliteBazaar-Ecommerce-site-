@@ -1,3 +1,5 @@
+'use strict'
+
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { BarLoader } from "react-spinners";
