@@ -63,7 +63,7 @@ const SignIn = () => {
       // const token = credential.accessToken;
       // The signed-in user info.
       // const user = result.user;
-      console.log(result.user);
+      // console.log(result.user);
       setuser(result.user)
       navigate('/')
       // Navigate('/')

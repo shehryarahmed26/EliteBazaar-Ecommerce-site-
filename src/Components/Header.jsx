@@ -1,3 +1,4 @@
+'use strict'
 import { Badge } from 'antd'
 import React, { useEffect, useState } from 'react'
 import { BrowserRouter, Link, Navigate, Route, Routes, useNavigate } from 'react-router-dom'
@@ -21,7 +22,7 @@ const Header = () => {
   const logouttoast = () => toast('logout Successfull')
   const Navigate = useNavigate()
   const [logoutflang, setlogoutflang] = useState(false)
- console.log(user);
+//  console.log(user);
 //  console.log('photorul >>', user.photoURL);
  
 
