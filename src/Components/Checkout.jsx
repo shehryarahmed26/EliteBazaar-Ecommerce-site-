@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { CartContext } from "../assets/Context/CartContext";
 
 const Checkout = () => {
-
+    const setCartitems = useContext(CartContext)
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -129,7 +130,7 @@ const Checkout = () => {
               Thank you for shopping with us.
             </p>
             <Link to={'/'}>
-            <button className="bg-blue-500 text-2xl  text-white px-6 rounded-md">OK</button>
+            <button onClick={() => setCartitems('')} className="bg-blue-500 text-2xl  text-white px-6 rounded-md">OK</button>
             </Link>
           </div>
         </div>
